@@ -1,5 +1,7 @@
 Rollbar for Yii2 (simple)
 =========================
+[![Dependency Status](https://www.versioneye.com/user/projects/5a8547320fb24f3ace5c54f6/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5a8547320fb24f3ace5c54f6)
+[![Packagist](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](https://github.com/gelige/yii2-rollbar-simple/blob/master/README.md)
 
 Simple error handler for [Rollbar](http://rollbar.com/) service for your Yii2 application.
 
