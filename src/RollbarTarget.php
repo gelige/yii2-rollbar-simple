@@ -2,6 +2,7 @@
 namespace gelige\yii\rollbar;
 
 use yii\helpers\ArrayHelper;
+use yii\helpers\VarDumper;
 use yii\log\Target;
 
 class RollbarTarget extends Target
@@ -18,7 +19,7 @@ class RollbarTarget extends Target
     public function export() {
         foreach ($this->messages as $message) {
             list($text, $yiiLoggerLevel, $category, $timestamp) = $message;
-            $rollbarMessage = new RollbarMessage($text, $yiiLoggerLevel, $this->context());
+            $rollbarMessage = new RollbarMessage($this->formatText($text), $yiiLoggerLevel, $this->context());
             $this->rollbar()->log($rollbarMessage);
         }
     }
@@ -45,5 +46,22 @@ class RollbarTarget extends Target
      */
     protected function rollbar() {
         return \Yii::$app->rollbar;
+    }
+
+    /**
+     * Format message text as string
+     * @param $text
+     * @return string
+     */
+    protected function formatText($text) {
+        if (!is_string($text)) {
+            // exceptions may not be serializable if in the call stack somewhere is a Closure
+            if ($text instanceof \Throwable || $text instanceof \Exception) {
+                $text = (string) $text;
+            } else {
+                $text = VarDumper::export($text);
+            }
+        }
+        return $text;
     }
 }
