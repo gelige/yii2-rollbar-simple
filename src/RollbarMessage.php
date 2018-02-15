@@ -17,11 +17,11 @@ class RollbarMessage
     }
 
     /**
-     * @param $logMessageLevel int Yii2 log message level
+     * @param $yiiLoggerLevel int Yii2 log message level
      * @return string Rollbar log level
      */
-    protected function level($logMessageLevel) {
-        switch ($logMessageLevel) {
+    protected function level($yiiLoggerLevel) {
+        switch ($yiiLoggerLevel) {
             case Logger::LEVEL_INFO:
                 return Level::INFO;
             case Logger::LEVEL_WARNING:

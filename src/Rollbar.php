@@ -24,6 +24,4 @@ class Rollbar extends Component
     public function log(RollbarMessage $message) {
         BaseRollbar::log($message->level, $message->text, $message->extra);
     }
-
-
 }
