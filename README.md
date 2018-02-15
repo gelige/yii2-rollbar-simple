@@ -26,7 +26,6 @@ Usage
 -----
 1. Add the component configuration in your *global* `main.php` config file:
  ```php
- 'bootstrap' => ['rollbar'],
  'components' => [
      'rollbar' => [
          'class' => 'gelige\yii\rollbar\Rollbar',
