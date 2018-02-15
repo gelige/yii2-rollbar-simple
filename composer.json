@@ -1,0 +1,22 @@
+{
+    "name": "gelige/yii2-rollbar-simple",
+    "description": "Rollbar for Yii2",
+    "type": "yii2-extension",
+    "keywords": ["rollbar", "yii2", "log", "error", "exception", "debug", "monitoring"],
+    "license": "BSD-3-Clause",
+    "homepage": "http://github.com/gelige/yii2-rollbar-simple",
+    "authors": [
+        {
+            "name": "Grigory Reutov",
+        }
+    ],
+    "require": {
+        "rollbar/rollbar": "^1.4",
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "gelige\\yii2\\rollbar\\": ""
+        }
+    }
+}
