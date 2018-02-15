@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "gelige\\yii2\\rollbar\\": ""
+            "gelige\\yii\\rollbar\\": "src"
         }
     }
 }

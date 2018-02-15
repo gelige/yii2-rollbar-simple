@@ -3,7 +3,7 @@ Rollbar for Yii2 (simple)
 [![Dependency Status](https://www.versioneye.com/user/projects/5a8547320fb24f3ace5c54f6/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5a8547320fb24f3ace5c54f6)
 [![Packagist](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](https://github.com/gelige/yii2-rollbar-simple/blob/master/README.md)
 
-Simple error handler for [Rollbar](http://rollbar.com/) service for your Yii2 application.
+Simple [Rollbar](http://rollbar.com/) logger your Yii2 application.
 
 
 Installation
@@ -29,23 +29,21 @@ Usage
  'bootstrap' => ['rollbar'],
  'components' => [
      'rollbar' => [
-         'class' => 'gelige\yii2\rollbar\Rollbar',
+         'class' => 'gelige\yii\rollbar\Rollbar',
          'accessToken' => 'POST_SERVER_ITEM_ACCESS_TOKEN',
-         
-         // You can specify exceptions to be ignored by yii2-rollbar-simple:
-         // 'ignoreExceptions' => [
-         //         ['yii\web\HttpException', 'statusCode' => [400, 404]],
-         //         ['yii\web\HttpException', 'statusCode' => [403], 'message' => ['This action is forbidden']],
-         // ],
      ],
  ],
  ```
  
-2. Add the *web* error handler configuration in your *web* config file:
+2. Add a new log target in your *global* `main.php` config file:
  ```php
  'components' => [
-     'errorHandler' => [
-         'class' => 'gelige\yii2\rollbar\web\ErrorHandler',
+     'log' => [
+         'targets' => [
+             'class' => 'gelige\yii\rollbar\RollbarTarget',
+             // 'except' => ['yii\web\HttpException:404'],
+             // 'levels' => YII_DEBUG ? ['error', 'warning'] : ['error'],
+         ],
      ],
  ],
  ```
