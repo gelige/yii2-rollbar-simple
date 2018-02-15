@@ -7,7 +7,7 @@
     "homepage": "http://github.com/gelige/yii2-rollbar-simple",
     "authors": [
         {
-            "name": "Grigory Reutov",
+            "name": "Grigory Reutov"
         }
     ],
     "require": {

@@ -22,7 +22,7 @@ Through [composer](http://getcomposer.org/download/):
 
 Usage
 -----
-0. Add the component configuration in your *global* `main.php` config file:
+1. Add the component configuration in your *global* `main.php` config file:
  ```php
  'bootstrap' => ['rollbar'],
  'components' => [
@@ -38,8 +38,8 @@ Usage
      ],
  ],
  ```
-
-0. Add the *web* error handler configuration in your *web* config file:
+ 
+2. Add the *web* error handler configuration in your *web* config file:
  ```php
  'components' => [
      'errorHandler' => [
